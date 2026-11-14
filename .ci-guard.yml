@@ -1,0 +1,10 @@
+# ci-guard 配置（由 --init-config 生成）
+version: 1
+persona: regular          # regular | pedantic | auditor
+# rules:                  # 单条规则开关与级别覆盖
+#   R07: {enabled: false}
+#   R11: {severity: FAIL}
+# ignore:                  # 文件级忽略，支持 glob 与 file:line
+#   R02:
+#     - ".github/workflows/ci.yml"
+#     - ".github/workflows/ci.yml:51"

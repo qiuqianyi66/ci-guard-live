@@ -1,0 +1,9 @@
+{
+ "version": 1,
+ "generated_by": "ci-guard 0.3.2",
+ "repo": "cg-live2",
+ "fingerprints": [
+  "R01|.github/workflows/demo.yml|uses: actions/checkout@v4|1",
+  "R05|.github/workflows/demo.yml|顶层与 job 级都没有 permissions|1"
+ ]
+}
