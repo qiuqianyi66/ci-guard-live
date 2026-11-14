@@ -12,7 +12,7 @@
 - `COVERAGE.md` —— 与 actionlint（36 类）、zizmor（34 条）的逐条边界
 - `FDE-NOTES.md` —— 从 Forward Deployed Engineer 视角看对上了什么、还差什么
 - `PRODUCT-NOTES.md` —— actionlint / zizmor 的产品结构逆向笔记与差距表
-- `AUDIT-2026-11-14.md` —— 四仓体检报告与三条上线路径
+- 四仓体检明细与 `reports/*.json` 不随仓发布（内含内部仓库路径），需要时单独索取
 
 ## 用法
 
