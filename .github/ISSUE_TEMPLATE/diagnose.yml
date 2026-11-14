@@ -1,0 +1,45 @@
+name: 申请一次单仓诊断
+description: 给一个仓库地址，24 小时内出一份 CI 门禁诊断报告
+title: "[诊断] "
+labels: ["diagnose"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        免费，不签合同，不需要任何权限。
+        我只看 `.github/workflows/` 下的文件，不改代码。报告里逐条给出：问题在哪一行、为什么是问题、怎么改。
+        觉得没用，把报告删掉就行。
+  - type: input
+    id: repo
+    attributes:
+      label: 仓库地址
+      placeholder: https://github.com/owner/repo
+    validations:
+      required: true
+  - type: dropdown
+    id: visibility
+    attributes:
+      label: 仓库可见性
+      description: 私有仓不必给权限——把 workflow 目录打包发我也行
+      options:
+        - 公开仓
+        - 私有仓（可以给只读权限）
+        - 私有仓（我打包 workflow 文件发你）
+    validations:
+      required: true
+  - type: input
+    id: count
+    attributes:
+      label: workflow 文件大概多少个
+      placeholder: 不清楚就写“不清楚”
+  - type: textarea
+    id: worry
+    attributes:
+      label: 最担心哪一类问题
+      description: 一句话就够，写不出来也没关系
+      placeholder: 密钥泄漏 / 发布被误触发 / 权限太宽 / 说不上来
+  - type: input
+    id: contact
+    attributes:
+      label: 怎么把报告给你
+      placeholder: 留邮箱，或在 issue 里回复
