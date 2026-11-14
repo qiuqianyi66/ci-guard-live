@@ -1,0 +1,30 @@
+{
+ "version": "0.3.2",
+ "repo": "C:\\Users\\yanha\\Desktop\\work",
+ "persona": "pedantic",
+ "summary": {
+  "total": 1,
+  "active": 1,
+  "ignored": 0,
+  "fail": 0,
+  "warn": 1
+ },
+ "findings": [
+  {
+   "rule": "R13",
+   "level": "WARN",
+   "confidence": "medium",
+   "file": ".github/workflows",
+   "line": 0,
+   "detail": "未发现任何 workflow 文件",
+   "title": "仓库没有任何 workflow",
+   "why": "没有 CI 等于全部检查靠自觉；最小 CI 面也要 lint + test + 构建",
+   "fix": "至少建 ci.yml",
+   "anchor": "AV.2",
+   "url": "tools/ci-guard/docs/RULES.md#r13",
+   "ignored": false,
+   "ignore_reason": "",
+   "fingerprint": "R13|.github/workflows|未发现任何 workflow 文件|1"
+  }
+ ]
+}

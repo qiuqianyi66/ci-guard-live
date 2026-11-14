@@ -1,0 +1,17 @@
+name: ci-guard
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - run: pip install pyyaml==6.0.3
+      - run: python tools/ci-guard/ci_guard.py . --format=github

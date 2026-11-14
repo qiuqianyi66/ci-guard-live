@@ -1,0 +1,13 @@
+name: demo
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "this workflow is the subject under review, not the guard itself"
