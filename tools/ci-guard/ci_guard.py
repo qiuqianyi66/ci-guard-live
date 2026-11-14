@@ -350,6 +350,11 @@ def scan(repo):
                 if "github.event.pull_request.head" in ln and ("ref:" in ln or "sha" in ln):
                     fs.append(Finding("R15", rel, i, "pull_request_target 下 checkout 了 PR head"))
 
+        # R15 补充：checkout v5 起自带 allow-unsafe-pr-checkout（默认 false），显式设 true 等于把这道防护关掉
+        if re.search(r"allow-unsafe-pr-checkout:\s*true", text, re.I):
+            fs.append(Finding("R15", rel, line_of(text, "allow-unsafe-pr-checkout"),
+                              "显式打开了 allow-unsafe-pr-checkout"))
+
         # R17：自托管 runner 上跑 PR 代码（低置信：很多团队是有意的）
         if ("pull_request" in ev or "pull_request_target" in ev) and re.search(r"runs-on:\s*[^\n]*self-hosted", text):
             fs.append(Finding("R17", rel, line_of(text, "self-hosted"), "PR 触发且跑在 self-hosted runner"))
