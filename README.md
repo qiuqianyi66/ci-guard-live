@@ -1,6 +1,6 @@
 # ci-guard
 
-**把团队写好的 CI 规范，变成会在提交时说「不」的门禁。** 17 条判据、29 KB 单文件、纯 Python、零运行时依赖（除 pyyaml），跑在 GitHub Actions 里，只拦新增、不追旧账。
+**把团队写好的 CI 规范，变成会在提交时说「不」的门禁。** 17 条判据、29 KB 单文件、纯 Python，只依赖 pyyaml，跑在 GitHub Actions 里，只拦新增、不追旧账。
 
 [![ci-guard](https://github.com/qiuqianyi66/ci-guard-live/actions/workflows/guard.yml/badge.svg)](https://github.com/qiuqianyi66/ci-guard-live/actions/workflows/guard.yml)
 
@@ -36,7 +36,10 @@ actionlint 判语法与语义对错，zizmor 判通用安全模式。它们不�
 ## 30 秒接入
 
 ```bash
-# 1. 本地先看一遍（不装任何东西，只要 python + pyyaml）
+# 0. 拿到本地（这一步只是试跑；接进自己的仓看下面三种方式）
+git clone https://github.com/qiuqianyi66/ci-guard-live && cd ci-guard-live
+
+# 1. 本地看一遍（不装任何东西，只要 python + pyyaml）
 pip install pyyaml
 python tools/ci-guard/ci_guard.py .
 
