@@ -14,7 +14,7 @@
 
 **为什么是问题**：tag 是可被上游改写的可变引用。同一个 `@v4` 今天与明天可能是两份代码，而 CI 的结论会跟着一起变——你 pin 的其实是"信任上游永远不干这事"。2025 年 tj-actions 事件就是这么发生的：一个 tag 被改写，所有引用它的仓同时执行了陌生代码。
 
-**怎么修**：`uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2`。SHA 用 `git ls-remote https://github.com/<owner>/<repo> refs/tags/v4` 取，不要手敲。批量场景用 renovate 的 `pinDigests: true` 让机器人维护。
+**怎么修**：`uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0`。SHA 用 `git ls-remote https://github.com/<owner>/<repo> refs/tags/v4` 取，不要手敲。批量场景用 renovate 的 `pinDigests: true` 让机器人维护。
 
 **误报边界**：本地 action（`uses: ./path`）不报——它本来就在仓内，不存在上游改写。`docker://` 镜像引用不报，镜像的不可变性靠 digest 保证，是另一套机制。
 
@@ -256,6 +256,8 @@ steps:
 **怎么修**：只 checkout base。确实需要分析 PR 代码时，用 `pull_request` 事件（无 secrets），或用 `pull_request_target` 只读 diff 文本、不执行。
 
 **误报边界**：`pull_request_target` 本身不报——合法用法是打标签、评论、读 diff。只有同时 checkout 了 head 才报。引用 `github.event.pull_request.head.label` 这类元数据不算。
+
+**第二判据（2026-11 从一手 `action.yml` 发现的）**：`actions/checkout` 从 v5 起新增 `allow-unsafe-pr-checkout`，默认 `false`，专门用来阻止在 `pull_request_target` / `workflow_run` 下 checkout fork 代码。**显式把它设成 `true`，等于自己把这层防护关掉**，同样判 FAIL。换句话说，v5 之后有两种写法都会中招：老写法（自己 checkout head）和新写法（关掉官方防护）。
 
 **实测**：四仓当前 0 命中。
 

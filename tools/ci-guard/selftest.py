@@ -12,7 +12,7 @@ import os, shutil, sys, tempfile, textwrap
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import ci_guard as g
 
-SHA = "11bd71901bbe5b1630ceea73d27597364c9af683"  # actions/checkout v4.2.2
+SHA = "fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09"  # actions/checkout v5.1.0
 
 BAD = {
     # R01 未 pin；R09 @latest；R10 secrets 进 run；R02 管道无 pipefail
@@ -100,10 +100,13 @@ BAD = {
           review:
             runs-on: ubuntu-latest
             steps:
-              - uses: actions/checkout@%s # v4.2.2
+              - uses: actions/checkout@%s # v5.1.0
                 with:
                   ref: ${{ github.event.pull_request.head.sha }}
-        """ % SHA),
+              - uses: actions/checkout@%s # v5.1.0
+                with:
+                  allow-unsafe-pr-checkout: true
+        """ % (SHA, SHA)),
     # R16 write-all；R17 自托管 + PR
     "bad-wideper.yml": textwrap.dedent("""\
         name: wide
@@ -176,7 +179,7 @@ GOOD = "good.yml", textwrap.dedent("""\
       test:
         runs-on: ubuntu-latest
         steps:
-          - uses: actions/checkout@%s # v4.2.2
+          - uses: actions/checkout@%s # v5.1.0
           - run: |
               set -euo pipefail
               go test ./...

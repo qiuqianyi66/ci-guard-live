@@ -24,7 +24,7 @@ try:
 except ImportError:
     HAS_YAML = False
 
-VERSION = "0.3.2"
+VERSION = "0.3.3"
 DOC_BASE = "tools/ci-guard/docs/RULES.md"
 
 RULES = {

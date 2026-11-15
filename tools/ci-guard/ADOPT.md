@@ -1,8 +1,37 @@
 # 接入演练记录（2026-11-14）
 
-在 open-code-review 的 14 份 workflow 副本上完整走了一遍"别人拿到这个工具，接进自己的仓"。
+## 真实仓实测（不是模拟）
 
-## 实测数据
+`qiuqianyi66/ci-guard-live`（private）上跑了四次，前三次是上线路径的三段，第四次是升级验证：
+
+| # | 动作 | run | 结果 | 耗时 |
+|---|---|---|---|---|
+| 1 | 直接接上，不冻结 | `43595841394` | failure（报出 2 条存量） | 8s |
+| 2 | `--init-config` 冻结 2 条后推送 | `43596452165` | **success**（0 新增） | 9s |
+| 3 | 注入一条新增违规后推送 | `43596525702` | failure（只报新增那 1 条） | 10s |
+| 4 | checkout 升到 v5.1.0（node24）后重推 | `43596950572` | **success**（3 条已冻结） | 18s |
+
+第 4 次之前 `guard` 带 4 条 annotations，其中一条是 `Node.js 20 is deprecated ... actions/checkout@11bd71901...`；升级后同位置只剩 1 条，且是 GitHub 自己的 `ubuntu-latest` 迁移 notice。日志确认实际下载并执行的是 `actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09`（v5.1.0，`using: node24`）。
+
+第 3 次 GitHub 采到的 `guard` annotations 只有一条业务判定：
+
+- `.github/workflows/demo.yml:13 [failure]` —— `uses: docker/build-push-action@v6` 未 pin
+
+存量那 2 条（`checkout@v4`、无 permissions）没有复现——基线把它们吞掉了。**棘轮在真实 CI 上成立，不是本地模拟。**
+
+第 1 次的日志原样：
+
+```
+##[error]uses: actions/checkout@v4 — 第三方 action 必须 pin 到不可变 SHA...
+##[warning]顶层与 job 级都没有 permissions — 未声明时 token 默认权限偏宽...
+##[error]Process completed with exit code 14.
+```
+
+pyyaml 在 ubuntu-latest 上系统自带（`Requirement already satisfied: pyyaml==6.0.3`），装依赖这一步没花时间。
+
+## 本地演练数据（5 分钟接入的计时依据）
+
+在 open-code-review 的 14 份 workflow 副本上完整走了一遍「别人拿到这个工具，接进自己的仓」。
 
 | 步骤 | 动作 | 实测 |
 |---|---|---|
@@ -35,7 +64,7 @@ jobs:
   guard:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
       - run: pip install pyyaml==6.0.3
       - run: python tools/ci-guard/ci_guard.py . --baseline .ci-guard-baseline.json
 ```

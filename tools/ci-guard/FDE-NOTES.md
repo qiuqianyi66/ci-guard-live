@@ -28,9 +28,9 @@ README 讲怎么跑，`docs/RULES.md` 每条规则一页（症状 / 为什么 / 
 
 明确不判（工具零命中是否算失败、覆盖率阈值、SHA 是否对应版本）与明确不做（`--fix`、`--collect=actions`）都写在文档里，每条带理由。在客户面前，**能说清边界的人比什么都能做的人可信**。
 
-## 还差三条，而且第一条是硬缺口
+## 还差三条，第一条已经有了最小闭环
 
-1. **没有真的接进任何仓的 CI。** 工具能跑，但 adoption 是零。按 OpenAI 那句 "success is production systems and sustained adoption"，现在只能算 demo。tea 与 yg-gateway 你禁止改动，所以这一步停在"提供接入文件"。
+1. **adoption 已从 0 变成 1。** `qiuqianyi66/ci-guard-live`（private）里 `guard` job 真实跑起来：annotations 落在 `demo.yml:12`（error）与 `demo.yml:1`（warning），`exit 14` 在 8 秒内让 job 失败。剩下的不是"能不能接"，是"能不能复制到有存量债的仓"——tea 与 yg-gateway 你禁止改动，所以规模化的那一步停在授权前。
 2. **没有一页纸的价值说明。** FDE 要能对客户讲"修 R03 这一行，避免的是什么"。现在只有四仓体检报告，没有 ROI 口径：部署被取消一次，代价是站点停在半新半旧的状态多久、谁去收拾。
 3. **没有应急路径。** 三条上线路径写了（冻结 → 观察 → 收紧），但没写"如果工具误报挡住了 merge，5 分钟内怎么关掉"：重冻结基线、或把 job 改成 `continue-on-error: true`、或直接删那一步。
 

@@ -36,4 +36,6 @@
 
 ## 现在到哪一步
 
-工具能在三个真实仓上跑出可信结果（0 FAIL 的范本、34 条的 tea、21 条的 yg-gateway），有棘轮、有规则文档、有回归锁、有官方 SARIF 校验。**缺口是 adoption 为零**：还没接进任何一个仓的 CI，按 FDE 的验收口径（production adoption），现在算 demo 不算上线。
+已经接进一个真实仓：`qiuqianyi66/ci-guard-live`（private）。`guard` job 抓到 `demo.yml` 的两处问题，annotations 落在该文件第 1 行（warning）与第 12 行（failure），`exit 14` 让 job 在 8 秒内失败。**adoption 从 0 变成 1，闭环成立。**
+
+下一步是把同样的接入复制到有存量债的仓（tea 34 条、yg-gateway 21 条），用 `--baseline` 先冻结再收紧。

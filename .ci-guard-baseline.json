@@ -1,7 +1,7 @@
 {
  "version": 1,
- "generated_by": "ci-guard 0.3.2",
- "repo": "v5",
+ "generated_by": "ci-guard 0.3.3",
+ "repo": "art",
  "fingerprints": [
   "R01|.github/workflows/demo.yml|uses: actions/checkout@v4|1",
   "R01|.github/workflows/demo.yml|uses: docker/build-push-action@v6|1",
