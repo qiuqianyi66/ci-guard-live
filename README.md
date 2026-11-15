@@ -65,6 +65,16 @@ jobs:
 
 新手请走 [GETTING-STARTED.md](tools/ci-guard/GETTING-STARTED.md)：每一步都有预期输出和踩坑说明。
 
+**注意 `demo.yml`：** 本仓的 `demo.yml` 是故意留的坏样本（action 未钉 SHA、用 docker 构建），它的红色失败是功能演示，不是仓库坏了。`ci-guard` 那条始终是绿的。
+
+### 三种接入方式
+
+| 方式 | 做法 | 适合 |
+|---|---|---|
+| 复制脚本 | `cp -r tools/ci-guard <你的仓>/tools/` | 想完全控制、离线可用 |
+| 引用可复用 workflow | `uses: qiuqianyi66/ci-guard-live/.github/workflows/reusable-guard.yml@main` | 不想把代码放进自己的仓 |
+| 本地跑一次 | `python tools/ci-guard/ci_guard.py .` | 先看会报什么，不改任何配置 |
+
 ---
 
 ## 17 条判据
@@ -146,7 +156,7 @@ tag 是可变的。上游把 `v4` 指向另一份代码，你的流水线第二�
 都不需要。一个 Python 脚本，在你自己的 runner 上跑，只看 `.github/workflows/`。
 
 **Q：怎么知道它真有用？**
-三次真实运行记录、四仓体检数字、误报校准过程都在 [ADOPT.md](tools/ci-guard/ADOPT.md) 与 [AUDIT 报告](tools/ci-guard/README.md) 里，可以逐条核。它抓出的最典型一处：一个仓的 Pages 部署挂了 `cancel-in-progress: true`，一次新提交就能把正在跑的部署打断成半成品。
+三次真实运行记录、四仓体检数字、误报校准过程都在 [ADOPT.md](tools/ci-guard/ADOPT.md) 与 [四仓体检报告](tools/ci-guard/AUDIT-2026-11-14.md) 里，可以逐条核。它抓出的最典型一处：一个仓的 Pages 部署挂了 `cancel-in-progress: true`，一次新提交就能把正在跑的部署打断成半成品。
 
 ---
 
@@ -166,6 +176,9 @@ tag 是可变的。上游把 `v4` 指向另一份代码，你的流水线第二�
 | 文件 | 内容 |
 |---|---|
 | [GETTING-STARTED.md](tools/ci-guard/GETTING-STARTED.md) | 新手 30 分钟：从看懂 workflow 到接进 CI |
+| [tools/ci-guard/README.md](tools/ci-guard/README.md) | 完整手册：架构、API、全部选项与开发说明 |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | 怎么改一条规则、提交前必须过什么 |
+| [AUDIT-2026-11-14.md](tools/ci-guard/AUDIT-2026-11-14.md) | 四个真实仓库的逐条体检记录 |
 | [docs/RULES.md](tools/ci-guard/docs/RULES.md) | 17 条逐条：症状 / 为什么 / 怎么修 / 误报边界 |
 | [COVERAGE.md](tools/ci-guard/COVERAGE.md) | 与 actionlint、zizmor 的目录级对照 |
 | [ADOPT.md](tools/ci-guard/ADOPT.md) | 接入演练、真实运行记录、应急路径、已知坑 |
