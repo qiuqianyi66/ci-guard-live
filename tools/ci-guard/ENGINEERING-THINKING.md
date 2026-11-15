@@ -314,6 +314,27 @@ REQUIRED_SECTIONS = ["摘要", "关键词", "参考文献"]   # 加一个"致谢
 
 ---
 
+## 八、会过时的是判据，不是方法
+
+这一节最重要。
+
+2025 年 8 月 15 日，GitHub 官方的 Actions 策略开始支持**强制 SHA 钉扎**——管理员打开一个开关，任何没钉到完整 commit 的 action 直接失败。2026 年 10 月 14 日，官方又上线了 workflow lockfiles 公测，直接锁定所有依赖的 commit。
+
+换句话说：我那些判据里最硬的一条（R01：action 必须钉到 40 位 SHA），在一年多之后被平台自己做掉了。
+
+**这不是坏事，是必然规律。**
+
+任何具体判据都活在两种力量之间：一边是"没人管的空档"，一边是"平台补上的能力"。空档被填上，判据就失去意义。今天稀缺的检查，明天会变成默认行为。
+
+所以真正能留下的不是那 17 条规则。是这两样：
+
+- **那四步方法**：找出能判对错的那句话 → 交给不会心软的东西 → 只认输出 → 划清边界
+- **那一次练习**：你真的把一个要求变成了不靠人的机制，这个过程你走通了
+
+规则会死，方法不会。这也是为什么我不建议任何人把这套东西当产品做——把它当一次练习做。练完你就有了那个能力，能力不会被版本号淘汰。
+
+---
+
 ## 最后一段
 
 我不想把工程化讲成"提高效率的工具"，那样太轻了。
@@ -329,3 +350,68 @@ REQUIRED_SECTIONS = ["摘要", "关键词", "参考文献"]   # 加一个"致谢
 > **好的制度，不是让人不敢犯错，是让错误在被发现之前就留下痕迹。**
 
 如果你现在就有一份总也执行不下去的规矩，别去改它的措辞。先去挑一条能判对错的，让它自己跑起来。
+
+---
+
+# 附录：来源与依据
+
+这一节是给"想核对"的人准备的。文中每个数字和判断都留了出处，你可以自己去查。这也算这篇文章的执行边界：**凡是查不到出处的，不算数。**
+
+## 一、外部标准与官方事实
+
+| 文中说法 | 出处 | 怎么核对 |
+|---|---|---|
+| SHA 钉扎是官方建议，且已能强制 | GitHub Changelog，2025-08-15《Actions policy now supports blocking and SHA pinning》 | 打开链接找 "Enforce SHA pinning" 段，原文写着 "The policy will check for a full commit SHA, and any workflow that attempts to use an action that isn't pinned will fail." |
+| 官方在做依赖锁定 | GitHub Blog，2026 安全路线图《What's coming to our GitHub Actions 2026 security roadmap》 | 找 "workflow-level dependency locking" 段，提到用 commit SHA 锁住直接与传递依赖 |
+| 锁定已进入公测 | GitHub Changelog，2026-10-14《GitHub Actions workflow lockfiles in public preview》 | 开头即写 "Tags and branches can move"，lockfiles 让引用保持但执行锁定 commit |
+| SARIF 2.1.0 是国际标准 | OASIS 标准页（2019-07-23 批准）与规范正文 PDF | 标准页给出批准日期与定义：静态分析工具输出的标准格式 |
+| actionlint 有 36 条规则 | arXiv 论文《Unpacking Security Scanners for GitHub Actions Workflows》 | 正文写明 "Most of the rules of actionlint (28 out of 36) aim at the GitHub Runner Compatibility Weakness"，据此确认总数 36 |
+| zizmor 约 30 多种检查 | zizmor 官方仓（zizmorcore/zizmor） | 仓说明写明是 GitHub Actions 静态分析，覆盖脚本注入、权限过大、未钉扎依赖、危险触发器等 |
+| 两者定位不同，建议一起用 | secure-pipelines.com 的对比实验文章 | 表格逐项列出 actionlint 与 zizmor 各自覆盖什么，结论是 use both |
+| 私有仓的安全面板要付费 | Microsoft GHAS 产品页 + GitHub Blog 新手安全文章 | 两处都写明：多数安全功能对公开仓免费，私有仓需要 GHAS 许可 |
+
+原文链接：
+
+1. https://github.blog/changelog/2025-08-15-github-actions-policy-now-supports-blocking-and-sha-pinning-actions/
+2. https://github.blog/news-insights/product-news/whats-coming-to-our-github-actions-2026-security-roadmap/
+3. https://github.blog/changelog/2026-10-14-github-actions-workflow-lockfiles-in-public-preview/
+4. https://www.oasis-open.org/standard/sarif-v2-1-0/
+5. https://docs.oasis-open.org/sarif/sarif/v2.1.0/os/sarif-v2.1.0-os.pdf
+6. https://arxiv.org/pdf/2601.14455v1
+7. https://github.com/rhysd/actionlint
+8. https://github.com/zizmorcore/zizmor
+9. https://secure-pipelines.com/ci-cd-security/lab-detecting-malicious-github-actions-static-analysis/
+10. https://www.microsoft.com/en-us/securityengineering/sdl/ghas
+11. https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-github-security/
+
+## 二、文中关于自己的数字（可当场核对）
+
+| 文中说法 | 出处 | 怎么核对 |
+|---|---|---|
+| 288 页、244 张表、62 个一级标题 | 《企业级 AI Native 项目开发全流程白皮书》PDF 与 Word 原件 | 成品 292 页（含 4 页目录），目录页逐条列出 62 个一级标题；表格数可用 Word 字数统计或脚本计数 |
+| 17 条判据 | `ci_guard.py`（249 KB）与 `docs/RULES.md` | 每条在 RULES.md 里有独立小节，标注对应的白皮书条款（AV.5 / AV.6 / AW.7 / AW.8 / AW.10 等） |
+| 四仓合计 54 处 | 各仓 `--format=json` 输出 | 逐仓跑一遍再相加：成熟范本仓 0 FAIL、tea 34、yg-gateway 21、career-os 1 |
+| 四次运行 8s / 9s / 10s / 18s | GitHub Actions run 记录 | 公开仓 `qiuqianyi66/ci-guard-live` 的 Actions 页面，按时间顺序可查四次 |
+| 第一版 4 条全是误报 | 校准记录与改动前后两次输出 | 同一范本仓改判定前后各跑一次，对比命中项 |
+| 36 → 35 | 基线文件前后 diff | 改一行 `cancel-in-progress` 后重跑，基线忽略数少一条 |
+| SARIF 通过官方 schema | `verify_sarif.py` + 官方 2.1.0 schema（112 KB） | 本地跑校验器，19 条 results 全部合 schema |
+
+## 三、你自己怎么复现
+
+```bash
+# 1. 拿到工具
+git clone https://github.com/qiuqianyi66/ci-guard-live
+
+# 2. 跑一次，看它到底报什么
+cd ci-guard-live
+python tools/ci-guard/ci_guard.py .
+
+# 3. 只看结构化结果
+python tools/ci-guard/ci_guard.py . --format=json
+
+# 4. 跑自带回归测试（7 项）
+python tools/ci-guard/selftest.py
+```
+
+跑出来的数字如果和本文说的不一致，以你跑出来的为准。**这篇文章里的所有数字都是 2026 年 11 月 15 日的快照，不是永恒真理。**
+
