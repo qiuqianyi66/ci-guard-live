@@ -72,8 +72,10 @@ jobs:
 | 方式 | 做法 | 适合 |
 |---|---|---|
 | 复制脚本 | `cp -r tools/ci-guard <你的仓>/tools/` | 想完全控制、离线可用 |
-| 引用可复用 workflow | `uses: qiuqianyi66/ci-guard-live/.github/workflows/reusable-guard.yml@main` | 不想把代码放进自己的仓 |
+| 引用可复用 workflow | `uses: qiuqianyi66/ci-guard-live/.github/workflows/reusable-guard.yml@v0.3.4` | 不想把代码放进自己的仓 |
 | 本地跑一次 | `python tools/ci-guard/ci_guard.py .` | 先看会报什么，不改任何配置 |
+
+第二种方式本仓自己在用：`reusable-selftest.yml` 调用自己跑一遍，每次 push 都会验证这条通路没坏（12s）。想钉到不可变版本，把 `@v0.3.4` 换成 commit SHA，本仓 R01 就是为这件事存在的。
 
 ---
 
