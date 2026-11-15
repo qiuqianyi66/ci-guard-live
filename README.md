@@ -63,8 +63,6 @@ jobs:
 
 新手请走 [GETTING-STARTED.md](tools/ci-guard/GETTING-STARTED.md)：每一步都有预期输出和踩坑说明。
 
-**不写代码？** 从 [工程化思维](tools/ci-guard/ENGINEERING-THINKING.md) 开始——用交论文的场景讲清规范与门禁的区别，最后给你一个改三行就能用的检查器。
-
 ---
 
 ## 17 条判据
@@ -154,7 +152,7 @@ tag 是可变的。上游把 `v4` 指向另一份代码，你的流水线第二�
 
 - 17 条判据，每条对应白皮书附录 AV–AW 的具体条款
 - 工具体积 249 KB，单文件 Python，只依赖 pyyaml
-- 四个真实仓库扫描合计 54 处问题（其中一个成熟范本仓 0 FAIL）
+- 三个真实仓库扫描合计 55 条 FAIL（另有一个成熟范本仓 0 FAIL）
 - 真实 GitHub 仓四次运行：8s / 9s / 10s / 18s
 - SARIF 通过官方 2.1.0 schema 校验（19 results）
 - 自带回归测试 7 项：坏样本覆盖 16/17（R13 空仓单独验）、合规样本 0 命中、基线冻结后 0 残留
@@ -166,8 +164,6 @@ tag 是可变的。上游把 `v4` 指向另一份代码，你的流水线第二�
 | 文件 | 内容 |
 |---|---|
 | [GETTING-STARTED.md](tools/ci-guard/GETTING-STARTED.md) | 新手 30 分钟：从看懂 workflow 到接进 CI |
-| [ENGINEERING-THINKING.md](tools/ci-guard/ENGINEERING-THINKING.md) | **不写代码也能看懂**：从规范到门禁，30 分钟做一个论文格式检查器 |
-| [examples/check_paper.py](tools/ci-guard/examples/check_paper.py) | 论文检查器示例，改三行就能改规矩 |
 | [docs/RULES.md](tools/ci-guard/docs/RULES.md) | 17 条逐条：症状 / 为什么 / 怎么修 / 误报边界 |
 | [COVERAGE.md](tools/ci-guard/COVERAGE.md) | 与 actionlint、zizmor 的目录级对照 |
 | [ADOPT.md](tools/ci-guard/ADOPT.md) | 接入演练、真实运行记录、应急路径、已知坑 |
