@@ -10,7 +10,6 @@
 - `ADOPT.md` —— 5 分钟接入演练（实测耗时）、应急路径、已知坑
 - `docs/RULES.md` —— 17 条规则逐页：症状 / 为什么 / 怎么修 / 误报边界 / 实测
 - `COVERAGE.md` —— 与 actionlint（36 类）、zizmor（34 条）的逐条边界
-- `FDE-NOTES.md` —— 从 Forward Deployed Engineer 视角看对上了什么、还差什么
 - `PRODUCT-NOTES.md` —— actionlint / zizmor 的产品结构逆向笔记与差距表
 - 四仓体检明细与 `reports/*.json` 不随仓发布（内含内部仓库路径），需要时单独索取
 
@@ -80,7 +79,6 @@ R14 是上一版里唯一一条「把人工读数机械化」的规则：它在 
 
 与 actionlint（36 类检查）、zizmor（34 条 audit）的逐条覆盖对照在 **`COVERAGE.md`**：7 条重叠、6 条三边都没有、3 条部分重叠。结论是三者判的不是同一件事——actionlint 管对错、zizmor 管安全、ci-guard 管判据，可以叠着用。
 
-从 Forward Deployed Engineer 的视角看，这个产物对上了「在现场先证明无害、不逼客户还债、意见落在 PR 上、交付能被接手、能说清边界」五条，硬缺口是 adoption 为零——见 **`FDE-NOTES.md`**。
 
 ## 配置与忽略
 
@@ -154,7 +152,7 @@ python ci_guard.py . --sarif ci-guard.sarif
 python verify_sarif.py ci-guard.sarif
 ```
 
-`verify_sarif.py` 用 `schema/sarif-2.1.0.json`（schemastore 官方副本，112 KB，随工具离线带着）做完整校验，不联网。这一步过，说明结构与 GitHub 服务端要的格式一致；`selftest.py` 里也跑同一套校验，规则改坏了会当场红。
+`verify_sarif.py` 用 `schema/sarif-2.1.0.json`（schemastore 官方副本，110 KB，随工具离线带着）做完整校验，不联网。这一步过，说明结构与 GitHub 服务端要的格式一致；`selftest.py` 里也跑同一套校验，规则改坏了会当场红。
 
 **平台侧那一步的实测边界（2026-11-14）**：本机 `gh` 已登录（`qiuqianyi66`），但 `qiuqianyi66/yg-gateway`、`dsh-purge`、`tea-ceremony` 的 `/code-scanning/alerts` 全部返回 404——仓库侧没有启用 code scanning。所以拦住的不是 token，而是"没有可落地的仓"：要真验证，得先在某个仓的 Settings 里启用 Code scanning（公开仓可用默认 CodeQL），再 `gh api /repos/<o>/<r>/code-scanning/sarifs` 提交。
 
@@ -196,4 +194,6 @@ python selftest.py
 
 ## 版本
 
+0.3.4 — 可复用 workflow 修好并验证（自取源码到 `.ci-guard-src`，`reusable-selftest.yml` 每次 push 自己跑一遍）；补 `CONTRIBUTING.md`、四仓体检报告。
+0.3.3 — README 演示视频（真实终端输出）、首个 Release、体积口径校正。
 0.3.2 — 17 条规则 + 独立规则文档 + 官方 SARIF 2.1.0 schema 离线校验（`verify_sarif.py`）+ persona / baseline / 配置 / inline 忽略 / GitHub annotations / 退出码分级。

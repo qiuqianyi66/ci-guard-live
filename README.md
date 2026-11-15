@@ -78,7 +78,7 @@ jobs:
 | 引用可复用 workflow | `uses: qiuqianyi66/ci-guard-live/.github/workflows/reusable-guard.yml@v0.3.4` | 不想把代码放进自己的仓 |
 | 本地跑一次 | `python tools/ci-guard/ci_guard.py .` | 先看会报什么，不改任何配置 |
 
-第二种方式本仓自己在用：`reusable-selftest.yml` 调用自己跑一遍，每次 push 都会验证这条通路没坏（12s）。想钉到不可变版本，把 `@v0.3.4` 换成 commit SHA，本仓 R01 就是为这件事存在的。
+第二种方式本仓自己在用：`reusable-selftest.yml` 调用自己跑一遍，每次 push 都会验证这条通路没坏（十几秒）。想钉到不可变版本，把 `@v0.3.4` 换成 commit SHA，本仓 R01 就是为这件事存在的。
 
 ---
 
@@ -149,7 +149,7 @@ jobs:
 先冻结，别急着修。`--init-config` 把当前状态记成基线，CI 先绿；之后每修一条，忽略数自动减一。真实数据：tea 36 条 → 改一行 `cancel-in-progress: false` 后变 35 条。
 
 **Q：私有仓库能把结果上传到 GitHub 的 code scanning 面板吗？**
-不能。那个功能要付费的 GitHub Advanced Security。本工具的交付方式是 **PR 拦截 + 本地 SARIF 文件**，SARIF 已通过官方 2.1.0 schema 严格校验（离线 schema，112 KB）。
+不能。那个功能要付费的 GitHub Advanced Security。本工具的交付方式是 **PR 拦截 + 本地 SARIF 文件**，SARIF 已通过官方 2.1.0 schema 严格校验（离线 schema，110 KB）。
 
 **Q：为什么必须 pin 到 commit SHA，pin tag 不行？**
 tag 是可变的。上游把 `v4` 指向另一份代码，你的流水线第二天就在跑别人的代码，而你的仓库里什么都没变。SHA 不可变。
@@ -188,7 +188,6 @@ tag 是可变的。上游把 `v4` 指向另一份代码，你的流水线第二�
 | [COVERAGE.md](tools/ci-guard/COVERAGE.md) | 与 actionlint、zizmor 的目录级对照 |
 | [ADOPT.md](tools/ci-guard/ADOPT.md) | 接入演练、真实运行记录、应急路径、已知坑 |
 | [ONEPAGER.md](tools/ci-guard/ONEPAGER.md) | 一页纸：三个真实命中 + 成本 |
-| [FDE-NOTES.md](tools/ci-guard/FDE-NOTES.md) | 一线交付视角下的能力与缺口 |
 | [selftest.py](tools/ci-guard/selftest.py) | 7 项回归，含 SARIF schema 校验 |
 | [verify_sarif.py](tools/ci-guard/verify_sarif.py) | 官方 schema 离线校验器 |
 

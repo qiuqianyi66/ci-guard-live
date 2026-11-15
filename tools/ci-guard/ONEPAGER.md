@@ -16,7 +16,7 @@
 
 | | |
 |---|---|
-| 体积 | 主程序 29 KB；含文档与 SARIF schema 约 337 KB |
+| 体积 | 主程序 29 KB；运行必需四件（含 110 KB 的 SARIF schema）约 152 KB；含文档与演示视频约 586 KB |
 | 依赖 | Python 3.8+，pyyaml 可选（缺了降级为 DEGRADED，正则类规则照跑） |
 | 接入 | 复制目录 → `--init-config` 冻结存量 → 加 4 行 workflow，实测 5 分钟内 |
 | 运行 | 14 份 workflow 的仓，不到 1 秒 |

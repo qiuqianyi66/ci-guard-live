@@ -68,7 +68,7 @@ FAIL[H] R01  .github/workflows/demo.yml:12
 
 ## 3. 接进自己的仓（5 分钟）
 
-1. 把 `tools/ci-guard/` 整个目录复制到你自己的仓库（主程序 29 KB，整个目录约 337 KB，纯 Python，无其他依赖）。
+1. 把 `tools/ci-guard/` 整个目录复制到你自己的仓库（主程序 29 KB；只留运行必需四件约 152 KB，整个目录含文档与演示视频约 586 KB，纯 Python，无其他依赖）。
 2. 新建 `.github/workflows/ci-guard.yml`：
 
 ```yaml

@@ -394,7 +394,7 @@ REQUIRED_SECTIONS = ["摘要", "关键词", "参考文献"]   # 加一个"致谢
 | 四次运行 8s / 9s / 10s / 18s | GitHub Actions run 记录 | 公开仓 `qiuqianyi66/ci-guard-live` 的 Actions 页面，按时间顺序可查四次 |
 | 第一版 4 条全是误报 | 校准记录与改动前后两次输出 | 同一范本仓改判定前后各跑一次，对比命中项 |
 | 36 → 35 | 基线文件前后 diff | 改一行 `cancel-in-progress` 后重跑，基线忽略数少一条 |
-| SARIF 通过官方 schema | `verify_sarif.py` + 官方 2.1.0 schema（112 KB） | 本地跑校验器，19 条 results 全部合 schema |
+| SARIF 通过官方 schema | `verify_sarif.py` + 官方 2.1.0 schema（110 KB） | 本地跑校验器，19 条 results 全部合 schema |
 
 ## 三、你自己怎么复现
 
