@@ -389,7 +389,7 @@ REQUIRED_SECTIONS = ["摘要", "关键词", "参考文献"]   # 加一个"致谢
 | 文中说法 | 出处 | 怎么核对 |
 |---|---|---|
 | 288 页、244 张表、62 个一级标题 | 《企业级 AI Native 项目开发全流程白皮书》PDF 与 Word 原件 | 成品 292 页（含 4 页目录），目录页逐条列出 62 个一级标题；表格数可用 Word 字数统计或脚本计数 |
-| 17 条判据 | `ci_guard.py`（249 KB）与 `docs/RULES.md` | 每条在 RULES.md 里有独立小节，标注对应的白皮书条款（AV.5 / AV.6 / AW.7 / AW.8 / AW.10 等） |
+| 17 条判据 | `ci_guard.py`（29 KB）与 `docs/RULES.md` | 每条在 RULES.md 里有独立小节，标注对应的白皮书条款（AV.5 / AV.6 / AW.7 / AW.8 / AW.10 等） |
 | 三仓合计 55 条 FAIL | 各仓 `--format=json` 输出（2026-11-15 重跑） | tea 34 + yg-gateway 21 + career-os 0 = 55；另有一个范本仓 0 FAIL、2 WARN |
 | 四次运行 8s / 9s / 10s / 18s | GitHub Actions run 记录 | 公开仓 `qiuqianyi66/ci-guard-live` 的 Actions 页面，按时间顺序可查四次 |
 | 第一版 4 条全是误报 | 校准记录与改动前后两次输出 | 同一范本仓改判定前后各跑一次，对比命中项 |

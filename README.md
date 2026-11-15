@@ -1,8 +1,10 @@
 # ci-guard
 
-**把团队写好的 CI 规范，变成会在提交时说「不」的门禁。** 17 条判据、249 KB、纯 Python、零运行时依赖（除 pyyaml），跑在 GitHub Actions 里，只拦新增、不追旧账。
+**把团队写好的 CI 规范，变成会在提交时说「不」的门禁。** 17 条判据、29 KB 单文件、纯 Python、零运行时依赖（除 pyyaml），跑在 GitHub Actions 里，只拦新增、不追旧账。
 
 [![ci-guard](https://github.com/qiuqianyi66/ci-guard-live/actions/workflows/guard.yml/badge.svg)](https://github.com/qiuqianyi66/ci-guard-live/actions/workflows/guard.yml)
+
+![ci-guard 真实运行演示：先报 3 项，冻结后变绿](tools/ci-guard/assets/readme-demo.gif)
 
 <sub>English keywords: GitHub Actions security checker · pin actions to commit SHA · policy-as-code gate · SARIF 2.1.0 · CI compliance</sub>
 
@@ -151,7 +153,7 @@ tag 是可变的。上游把 `v4` 指向另一份代码，你的流水线第二�
 ## 可核验的事实
 
 - 17 条判据，每条对应白皮书附录 AV–AW 的具体条款
-- 工具体积 249 KB，单文件 Python，只依赖 pyyaml
+- 主程序 29 KB，单文件 Python，只依赖 pyyaml
 - 三个真实仓库扫描合计 55 条 FAIL（另有一个成熟范本仓 0 FAIL）
 - 真实 GitHub 仓四次运行：8s / 9s / 10s / 18s
 - SARIF 通过官方 2.1.0 schema 校验（19 results）

@@ -35,7 +35,7 @@ pyyaml 在 ubuntu-latest 上系统自带（`Requirement already satisfied: pyyam
 
 | 步骤 | 动作 | 实测 |
 |---|---|---|
-| 1 | 复制 `tools/ci-guard` 到目标仓 | 44 ms，249 KB（含文档、schema、报告） |
+| 1 | 复制 `tools/ci-guard` 到目标仓 | 44 ms，约 337 KB（含文档、schema、报告） |
 | 2 | `--init-config` 生成配置与基线 | 353 ms，冻结 15 条存量 |
 | 3 | 带基线跑一次 | 0 新增，exit 0 |
 | 4 | 改一行引入新违规（`uses: actions/checkout@v4`） | 精确抓出那 1 条，其余 15 条继续被忽略，exit 14 |
@@ -45,7 +45,7 @@ pyyaml 在 ubuntu-latest 上系统自带（`Requirement already satisfied: pyyam
 ## 接入 checklist
 
 ```bash
-# 1. 复制工具（249 KB，无子模块、无网络依赖）
+# 1. 复制工具（约 337 KB，无子模块、无网络依赖）
 cp -r tools/ci-guard <你的仓>/tools/
 
 # 2. 冻结存量（只跑一次，产物要提交）
