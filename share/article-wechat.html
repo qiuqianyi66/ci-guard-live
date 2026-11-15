@@ -1,0 +1,281 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>工程化思维 · 公众号排版版</title></head><body style="margin:0;padding:24px 16px;background:#fff;max-width:680px;"><div style="padding:0 2px;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;">
+<p style="background:#fffbe6;border:1px dashed #e8d28a;border-radius:4px;padding:12px 14px;margin:0 0 1.6em 0;font-size:14px;color:#8a6d3b;">【此处插入头图：头图-钩子.png】</p>
+<h1 style="font-size:23px;font-weight:700;color:#1a1a1a;line-height:1.5;margin:0 0 0.9em 0;padding-bottom:10px;border-bottom:2px solid #e8e8e8;">工程化思维：让规矩不靠人也能成立</h1>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;"><strong>写给不写代码的人。</strong> 论文、活动策划、社团管理、实习周报，都能用。</p>
+<hr style="border:none;border-top:1px solid #ececec;margin:2.4em 0;">
+<h2 style="font-size:19px;font-weight:700;color:#1a1a1a;line-height:1.5;margin:2.2em 0 0.9em 0;padding-left:11px;border-left:4px solid #07c160;">一句话把我问住了</h2>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">我花一个月写了一份 288 页的项目规范，15 章、47 个附录、244 张表。自我感觉良好。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">有人翻了两页，抬头问我：</p>
+<blockquote style="background:#f7f7f7;border-left:3px solid #d9d9d9;padding:12px 16px;margin:1.4em 0;color:#666;font-size:15px;line-height:1.7;"><strong>"这些东西只能被读，不能被安装吗？"</strong></blockquote>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">我当场没答上来。因为我心里清楚：这份文档里每一条"必须""禁止""应当"，最终都靠<strong>人记得住</strong>。人一忙就忘，一累就通融，一换人就没了。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">那一刻我意识到，我做的不是制度，是一份<strong>愿望清单</strong>。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">后来我把里面 17 条能判对错的条款，写成了一个会在别人提交时自动说"不"的程序。接进自己的三个仓，扫出 55 条 FAIL，其中一处是"部署会被新提交打断"——而这条恰好违反我自己写的规范。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">这篇文章讲的就是那中间的一步：<strong>怎么把"要求"变成"不靠人也成立"的机制。</strong></p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">不需要你会写代码。会用 Word、会交作业就行。</p>
+<hr style="border:none;border-top:1px solid #ececec;margin:2.4em 0;">
+<h2 style="font-size:19px;font-weight:700;color:#1a1a1a;line-height:1.5;margin:2.2em 0 0.9em 0;padding-left:11px;border-left:4px solid #07c160;">一、先分清两个词：规范 和 门禁</h2>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">这两个词天天被混用，但它们差着一整个执行力。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;"><strong>规范</strong>：贴在墙上的东西。"请保持安静""请勿吸烟""实验数据必须真实"。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;"><strong>门禁</strong>：刷不过就进不去的那台机器。地铁闸机、门禁卡、考试安检。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">区别在哪？</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">规范依靠<strong>自觉</strong>。门禁依靠<strong>机制</strong>。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">规范写在纸上，谁都能说自己遵守了。门禁不认说法，只认刷卡那一下。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">绝大多数组织只有前者，然后困惑为什么大家不遵守。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;"><strong>关键认知：规范是写给愿意遵守的人看的，门禁是给所有人用的。</strong> 你不可能靠说服让一百个人都自觉，但你可以装一台机器。</p>
+<hr style="border:none;border-top:1px solid #ececec;margin:2.4em 0;">
+<h2 style="font-size:19px;font-weight:700;color:#1a1a1a;line-height:1.5;margin:2.2em 0 0.9em 0;padding-left:11px;border-left:4px solid #07c160;">二、工程化思维的四个零件</h2>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">"工程化"听起来很技术，其实它只做四件事。我用交论文的场景讲。</p>
+<h3 style="font-size:16px;font-weight:700;color:#1a1a1a;margin:1.6em 0 0.7em 0;">零件一 判据：把"要怎样"写成能判对错的一句话</h3>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">这是最难的一步，也是绝大多数规范失败的地方。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">看看这些常见的规范怎么写：</p>
+<blockquote style="background:#f7f7f7;border-left:3px solid #d9d9d9;padding:12px 16px;margin:1.4em 0;color:#666;font-size:15px;line-height:1.7;">"论文要有学术性。"&lt;br&gt;"活动策划要有执行力。"&lt;br&gt;"周报要写清楚进展。"</blockquote>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;"><strong>这三句话，一句都判不了对错。</strong> 什么叫学术性？谁来定义执行力？"写清楚"是多清楚？</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">能判对错的写法长这样：</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">· 有 <code style="background:#f2f2f2;padding:1px 4px;border-radius:3px;font-size:14px;font-family:Consolas,monospace;">#</code> 一级标题，且只有一个</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">· 有「摘要」「关键词」「参考文献」三个部分</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">· 正文不少于 800 字</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">· 正文里出现的每个 <code style="background:#f2f2f2;padding:1px 4px;border-radius:3px;font-size:14px;font-family:Consolas,monospace;">[1]</code>，参考文献里都能找到对应条目</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">· 单段不超过 400 字</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">差别在这里：前一类是<strong>形容词</strong>，后一类是<strong>可以当场核对的事实</strong>。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;"><strong>一句话原则：凡是不能判对错的规范，最后都会变成人情。</strong></p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">"老师您看我这篇还行吧"，就是规范失败之后的必然产物。</p>
+<h3 style="font-size:16px;font-weight:700;color:#1a1a1a;margin:1.6em 0 0.7em 0;">零件二 检查：判的人不能是"应该负责的人"</h3>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">规范里最爱写"由 XX 负责审核"。问题是，负责的人也要下班，也会心软。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">工程化的做法是把判断<strong>交给一个不会心软的东西</strong>，可以是一段脚本、一张清单、一个表格公式。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">不是不信任人，是不让人把精力耗在机械核对上。人该干的是"这篇论文有没有价值"，不是"数它有没有 800 字"。</p>
+<h3 style="font-size:16px;font-weight:700;color:#1a1a1a;margin:1.6em 0 0.7em 0;">零件三 证据：不认"我做了"，只认"这是输出"</h3>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">职场上最常见的对话：</p>
+<blockquote style="background:#f7f7f7;border-left:3px solid #d9d9d9;padding:12px 16px;margin:1.4em 0;color:#666;font-size:15px;line-height:1.7;">"改好了吗？" "改好了。"</blockquote>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">然后打开一看，没改。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">工程化只认三样东西：<strong>文件、日志、截图</strong>。不是不信任，是因为"改好了"这三个字无法核对，而一个 diff 可以。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">这条在论文里也一样：不要写"已按要求修改"，要留一份带修订标记的版本。</p>
+<h3 style="font-size:16px;font-weight:700;color:#1a1a1a;margin:1.6em 0 0.7em 0;">零件四 边界：明确说出"我不判什么"</h3>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">这一条最容易被忽略，却决定了别人会不会信任你。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">一个好的检查器必须敢说：我只查格式，不查你的观点对不对；我只查引用有没有对上，不查你引的文献质量高不高。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;"><strong>不划边界的工具，最后会被当成万能的，然后在第一次判错时被彻底抛弃。</strong></p>
+<hr style="border:none;border-top:1px solid #ececec;margin:2.4em 0;">
+<h2 style="font-size:19px;font-weight:700;color:#1a1a1a;line-height:1.5;margin:2.2em 0 0.9em 0;padding-left:11px;border-left:4px solid #07c160;">三、一个反常识：规范写不完，是因为写的时候没想过"谁来判"</h2>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">很多人写规范的习惯是：想到什么写什么，越全越好。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">结果写了两百条，一条都执行不了。因为写的时候只想着"应该怎样"，没想着"这条谁来判、怎么判、判错了怎么办"。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">我自己的白皮书就是这样：288 页，最后能变成机器判据的，只有 17 条。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;"><strong>这不是失败，这是正常的比例。</strong> 大部分规范是给人看的（原则、价值观、判断方法），少部分是能给机器判的（格式、流程、硬性条件）。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">工程化的第一步不是写更多规范，是<strong>把现有规范里能判的那部分挑出来</strong>。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">挑的标准就一条：<strong>换成另一个人来看，他能不能得出同一个结论？</strong></p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">能，就是判据。不能，就还是形容词。</p>
+<hr style="border:none;border-top:1px solid #ececec;margin:2.4em 0;">
+<h2 style="font-size:19px;font-weight:700;color:#1a1a1a;line-height:1.5;margin:2.2em 0 0.9em 0;padding-left:11px;border-left:4px solid #07c160;">四、为什么"只拦新增"是关键（这条最反直觉）</h2>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">假设你给一个团队装了门禁，第一天跑出来 200 个问题。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">会发生什么？</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">不是大家排队去修。是有人在群里说"这玩意儿太吵了"，然后第二天它被关掉。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;"><strong>新规矩一上来就全面否定过去，等于逼人拆掉它。</strong></p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">正确做法只有一条：<strong>先冻结存量，只拦新增。</strong></p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">· 第一次接上：把现有的 200 个问题记成一份"欠条"，不再报</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">· 之后：只报<strong>新出现</strong>的问题</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">· 每修好一条，欠条上就少一条，门自动紧一格</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">这叫棘轮：只进不退。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">我在自己的项目上验证过：一个仓有 36 条存量，冻结后 CI 变绿；我改了一行代码修好一条，忽略数从 36 变成 35；再故意加一条新问题，它精确报出那一条，位置和行号都对。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;"><strong>这个机制的意义不是技术，是政治。</strong> 它让"上规矩"这件事从"清算过去"变成"约束未来"，团队才不会抵抗。</p>
+<hr style="border:none;border-top:1px solid #ececec;margin:2.4em 0;">
+<h2 style="font-size:19px;font-weight:700;color:#1a1a1a;line-height:1.5;margin:2.2em 0 0.9em 0;padding-left:11px;border-left:4px solid #07c160;">五、动手：30 分钟做一个你自己的门禁</h2>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">下面这个脚本，检查一份 Markdown 格式的论文。你不需要懂编程，只要会复制粘贴、会改数字。</p>
+<h3 style="font-size:16px;font-weight:700;color:#1a1a1a;margin:1.6em 0 0.7em 0;">第一步：装 Python</h3>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">去 python.org 下载，安装时勾选"Add Python to PATH"。装完打开命令行（Windows 搜 cmd，Mac 打开终端），输入 <code style="background:#f2f2f2;padding:1px 4px;border-radius:3px;font-size:14px;font-family:Consolas,monospace;">python --version</code>，能看到版本号就成了。</p>
+<h3 style="font-size:16px;font-weight:700;color:#1a1a1a;margin:1.6em 0 0.7em 0;">第二步：把论文存成 .md 文件</h3>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">用任何文本编辑器（记事本也行），把你的论文存成 <code style="background:#f2f2f2;padding:1px 4px;border-radius:3px;font-size:14px;font-family:Consolas,monospace;">我的论文.md</code>。格式大概是这样：</p>
+<pre style="background:#f6f8fa;border:1px solid #eaecef;border-radius:4px;padding:14px 16px;margin:1.4em 0;font-size:13px;line-height:1.6;color:#24292e;white-space:pre-wrap;word-break:break-all;font-family:Consolas,Menlo,monospace;"># 论文题目
+
+## 摘要
+
+这里是摘要……
+
+## 关键词
+
+公共空间；城市；行为
+
+## 正文
+
+正文内容，引用写成 [1] 这样……
+
+## 参考文献
+
+[1] 作者. 书名. 出版社, 2020.</pre>
+<h3 style="font-size:16px;font-weight:700;color:#1a1a1a;margin:1.6em 0 0.7em 0;">第三步：把这个脚本存成 <code style="background:#f2f2f2;padding:1px 4px;border-radius:3px;font-size:14px;font-family:Consolas,monospace;">check_paper.py</code></h3>
+<pre style="background:#f6f8fa;border:1px solid #eaecef;border-radius:4px;padding:14px 16px;margin:1.4em 0;font-size:13px;line-height:1.6;color:#24292e;white-space:pre-wrap;word-break:break-all;font-family:Consolas,Menlo,monospace;">import re
+import sys
+
+MIN_CHARS = 800          # 正文字数下限，你可以改
+MAX_PARA_CHARS = 400     # 单段字数上限
+REQUIRED_SECTIONS = [&quot;摘要&quot;, &quot;关键词&quot;, &quot;参考文献&quot;]
+
+def check(path):
+    text = open(path, encoding=&quot;utf-8&quot;).read()
+    lines = text.splitlines()
+    problems = []
+
+    h1 = [l for l in lines if re.match(r&quot;^#\s+\S&quot;, l)]
+    if not h1:
+        problems.append((&quot;FAIL&quot;, &quot;缺一级标题&quot;, &quot;第一行写成 `# 论文题目`&quot;))
+
+    for sec in REQUIRED_SECTIONS:
+        if not re.search(r&quot;^#+\s*&quot; + sec, text, re.M):
+            problems.append((&quot;FAIL&quot;, &quot;缺「%s」&quot; % sec, &quot;加一个 `## %s` 小节&quot; % sec))
+
+    body = re.sub(r&quot;^#+\s.*$&quot;, &quot;&quot;, text, flags=re.M)
+    body = re.sub(r&quot;\s&quot;, &quot;&quot;, body)
+    n = len(body)
+    if n &lt; MIN_CHARS:
+        problems.append((&quot;FAIL&quot;, &quot;正文只有 %d 字，下限 %d&quot; % (n, MIN_CHARS), &quot;补内容，别靠加空行凑&quot;))
+
+    cited = set(re.findall(r&quot;\[(\d+)\]&quot;, text))
+    ref_block = text.split(&quot;参考文献&quot;, 1)[-1]
+    listed = set(re.findall(r&quot;^\[(\d+)\]&quot;, ref_block, re.M))
+    missing = cited - listed
+    if missing:
+        problems.append((&quot;FAIL&quot;, &quot;正文引用了但参考文献里没有：%s&quot; % &quot;、&quot;.join(sorted(missing)),
+                         &quot;补进参考文献，或删掉正文里那个标注&quot;))
+
+    for i, para in enumerate([p for p in text.split(&quot;\n\n&quot;) if p.strip()], 1):
+        clean = re.sub(r&quot;\s&quot;, &quot;&quot;, re.sub(r&quot;^#+\s.*$&quot;, &quot;&quot;, para, flags=re.M))
+        if len(clean) &gt; MAX_PARA_CHARS:
+            problems.append((&quot;WARN&quot;, &quot;第 %d 段有 %d 字，超过 %d&quot; % (i, len(clean), MAX_PARA_CHARS),
+                             &quot;拆成两段，读者需要换气的地方&quot;))
+
+    return n, problems
+
+def main():
+    if len(sys.argv) &lt; 2:
+        print(&quot;用法： python check_paper.py 你的论文.md&quot;)
+        return 2
+    path = sys.argv[1]
+    n, problems = check(path)
+    print(&quot;检查：&quot;, path)
+    print(&quot;正文字数：&quot;, n)
+    if not problems:
+        print(&quot;全部通过。格式没毛病，可以交了。&quot;)
+        return 0
+    for level, what, fix in problems:
+        print(&quot;[%s] %s&quot; % (level, what))
+        print(&quot;      怎么改：%s&quot; % fix)
+    fails = sum(1 for p in problems if p[0] == &quot;FAIL&quot;)
+    print(&quot;\n合计 FAIL %d / WARN %d&quot; % (fails, len(problems) - fails))
+    return 1 if fails else 0
+
+if __name__ == &quot;__main__&quot;:
+    sys.exit(main())</pre>
+<h3 style="font-size:16px;font-weight:700;color:#1a1a1a;margin:1.6em 0 0.7em 0;">第四步：跑</h3>
+<pre style="background:#f6f8fa;border:1px solid #eaecef;border-radius:4px;padding:14px 16px;margin:1.4em 0;font-size:13px;line-height:1.6;color:#24292e;white-space:pre-wrap;word-break:break-all;font-family:Consolas,Menlo,monospace;">python check_paper.py 我的论文.md</pre>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">它大概会告诉你：</p>
+<pre style="background:#f6f8fa;border:1px solid #eaecef;border-radius:4px;padding:14px 16px;margin:1.4em 0;font-size:13px;line-height:1.6;color:#24292e;white-space:pre-wrap;word-break:break-all;font-family:Consolas,Menlo,monospace;">检查： 我的论文.md
+正文字数： 30
+[FAIL] 缺「关键词」
+      怎么改：加一个 `## 关键词` 小节
+[FAIL] 正文只有 30 字，下限 800
+      怎么改：补内容，别靠加空行凑
+[FAIL] 正文引用了但参考文献里没有：1
+      怎么改：补进参考文献，或删掉正文里那个标注
+
+合计 FAIL 3 / WARN 0</pre>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;"><strong>到这里，你已经完成了一次工程化。</strong> 你做的事是：把"老师的要求"变成了一段会自己判的代码。</p>
+<h3 style="font-size:16px;font-weight:700;color:#1a1a1a;margin:1.6em 0 0.7em 0;">第五步：改规矩</h3>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">想改判定？改文件顶部那三行就行：</p>
+<pre style="background:#f6f8fa;border:1px solid #eaecef;border-radius:4px;padding:14px 16px;margin:1.4em 0;font-size:13px;line-height:1.6;color:#24292e;white-space:pre-wrap;word-break:break-all;font-family:Consolas,Menlo,monospace;">MIN_CHARS = 800          # 改成 1200
+MAX_PARA_CHARS = 400     # 改成 300
+REQUIRED_SECTIONS = [&quot;摘要&quot;, &quot;关键词&quot;, &quot;参考文献&quot;]   # 加一个&quot;致谢&quot;</pre>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;"><strong>这就是工程化最爽的地方：规矩变了，改一处就够，不用重新教一百个人。</strong></p>
+<hr style="border:none;border-top:1px solid #ececec;margin:2.4em 0;">
+<h2 style="font-size:19px;font-weight:700;color:#1a1a1a;line-height:1.5;margin:2.2em 0 0.9em 0;padding-left:11px;border-left:4px solid #07c160;">六、五个坑，我全踩过</h2>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;"><strong>坑一：误报比漏报更致命。</strong></p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">我的第一版检查器在一个成熟项目上报了 4 条问题，我逐条读原文，发现<strong>全是误报</strong>，把必须的权限当成越权、把正常的构建当成缺陷。如果我当时没去核对，这 4 条会让整个工具被当成噪音关掉。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;"><strong>规则：报错之前，先读原文。宁可少报一条，不要错报一条。</strong></p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;"><strong>坑二：拿"我觉得"当判据。</strong></p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">"这段写得不好"不是判据，"这段 640 字超过上限"才是。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;"><strong>坑三：一上来就全覆盖。</strong></p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">想做十件事，结果一件都没落地。先做三条，跑通，再加。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;"><strong>坑四：把门禁当惩罚。</strong></p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">门禁该做的第一件事是让人变绿，不是让人变红。所以先冻结存量。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;"><strong>坑五：承诺零误报。</strong></p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">没有人能做到。承诺该是"每条误报都会被记录、并且会被改掉"。</p>
+<hr style="border:none;border-top:1px solid #ececec;margin:2.4em 0;">
+<h2 style="font-size:19px;font-weight:700;color:#1a1a1a;line-height:1.5;margin:2.2em 0 0.9em 0;padding-left:11px;border-left:4px solid #07c160;">七、这套东西能用到哪</h2>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">凡是有要求、但靠人记的事，都能用：</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">· <strong>论文/作业</strong>：格式、字数、引用、结构</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">· <strong>活动策划</strong>：预算项齐不齐、物料清单有没有漏、时间节点有没有倒挂</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">· <strong>社团管理</strong>：报销单据要素、活动归档清单</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">· <strong>实习周报</strong>：本周做了什么、遇到什么问题、下周计划</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">· <strong>团队协作</strong>：代码规范、提交信息格式、发布流程</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">判断标准始终是那一条：<strong>内容能不能换成另一个人来看，还能得出同一个结论。</strong></p>
+<hr style="border:none;border-top:1px solid #ececec;margin:2.4em 0;">
+<h2 style="font-size:19px;font-weight:700;color:#1a1a1a;line-height:1.5;margin:2.2em 0 0.9em 0;padding-left:11px;border-left:4px solid #07c160;">八、会过时的是判据，不是方法</h2>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">这一节最重要。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">2025 年 8 月 15 日，GitHub 官方的 Actions 策略开始支持<strong>强制 SHA 钉扎</strong>，管理员打开一个开关，任何没钉到完整 commit 的 action 直接失败。2026 年 10 月 14 日，官方又上线了 workflow lockfiles 公测，直接锁定所有依赖的 commit。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">换句话说：我那些判据里最硬的一条（R01：action 必须钉到 40 位 SHA），在一年多之后被平台自己做掉了。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;"><strong>这不是坏事，是必然规律。</strong></p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">任何具体判据都活在两种力量之间：一边是"没人管的空档"，一边是"平台补上的能力"。空档被填上，判据就失去意义。今天稀缺的检查，明天会变成默认行为。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">所以真正能留下的不是那 17 条规则。是这两样：</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">· <strong>那四步方法</strong>：找出能判对错的那句话 → 交给不会心软的东西 → 只认输出 → 划清边界</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">· <strong>那一次练习</strong>：你真的把一个要求变成了不靠人的机制，这个过程你走通了</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">规则会死，方法不会。这也是为什么我不建议任何人把这套东西当产品做——把它当一次练习做。练完你就有了那个能力，能力不会被版本号淘汰。</p>
+<hr style="border:none;border-top:1px solid #ececec;margin:2.4em 0;">
+<h2 style="font-size:19px;font-weight:700;color:#1a1a1a;line-height:1.5;margin:2.2em 0 0.9em 0;padding-left:11px;border-left:4px solid #07c160;">最后一段</h2>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">我不想把工程化讲成"提高效率的工具"，那样太轻了。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">它真正改变的是<strong>责任的位置</strong>。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">以前，规矩靠人守，守不住就怪人。现在，规矩靠机器守，人只需要在机器拦下来的时候做决定——改还是不改。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">这不是让人轻松，是让人把力气用在真正需要判断的地方。</p>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">一句话收尾：</p>
+<blockquote style="background:#f7f7f7;border-left:3px solid #d9d9d9;padding:12px 16px;margin:1.4em 0;color:#666;font-size:15px;line-height:1.7;"><strong>好的制度，不是让人不敢犯错，是让错误在被发现之前就留下痕迹。</strong></blockquote>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">如果你现在就有一份总也执行不下去的规矩，别去改它的措辞。先去挑一条能判对错的，让它自己跑起来。</p>
+<hr style="border:none;border-top:1px solid #ececec;margin:2.4em 0;">
+<h1 style="font-size:23px;font-weight:700;color:#1a1a1a;line-height:1.5;margin:0 0 0.9em 0;padding-bottom:10px;border-bottom:2px solid #e8e8e8;">附录：来源与依据</h1>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">这一节是给"想核对"的人准备的。文中每个数字和判断都留了出处，你可以自己去查。这也算这篇文章的执行边界：<strong>凡是查不到出处的，不算数。</strong></p>
+<h2 style="font-size:19px;font-weight:700;color:#1a1a1a;line-height:1.5;margin:2.2em 0 0.9em 0;padding-left:11px;border-left:4px solid #07c160;">一、外部标准与官方事实</h2>
+<div style="margin:1.4em 0;">
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">文中说法：出处；怎么核对</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">SHA 钉扎是官方建议，且已能强制：GitHub Changelog，2025-08-15《Actions policy now supports blocking and SHA pinning》；打开链接找 "Enforce SHA pinning" 段，原文写着 "The policy will check for a full commit SHA, and any workflow that attempts to use an action that isn't pinned will fail."</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">官方在做依赖锁定：GitHub Blog，2026 安全路线图《What's coming to our GitHub Actions 2026 security roadmap》；找 "workflow-level dependency locking" 段，提到用 commit SHA 锁住直接与传递依赖</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">锁定已进入公测：GitHub Changelog，2026-10-14《GitHub Actions workflow lockfiles in public preview》；开头即写 "Tags and branches can move"，lockfiles 让引用保持但执行锁定 commit</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">SARIF 2.1.0 是国际标准：OASIS 标准页（2019-07-23 批准）与规范正文 PDF；标准页给出批准日期与定义：静态分析工具输出的标准格式</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">actionlint 有 36 条规则：arXiv 论文《Unpacking Security Scanners for GitHub Actions Workflows》；正文写明 "Most of the rules of actionlint (28 out of 36) aim at the GitHub Runner Compatibility Weakness"，据此确认总数 36</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">zizmor 约 30 多种检查：zizmor 官方仓（zizmorcore/zizmor）；仓说明写明是 GitHub Actions 静态分析，覆盖脚本注入、权限过大、未钉扎依赖、危险触发器等</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">两者定位不同，建议一起用：secure-pipelines.com 的对比实验文章；表格逐项列出 actionlint 与 zizmor 各自覆盖什么，结论是 use both</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">私有仓的安全面板要付费：Microsoft GHAS 产品页 + GitHub Blog 新手安全文章；两处都写明：多数安全功能对公开仓免费，私有仓需要 GHAS 许可</p>
+</div>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">原文链接：</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">1. https://github.blog/changelog/2025-08-15-github-actions-policy-now-supports-blocking-and-sha-pinning-actions/</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">2. https://github.blog/news-insights/product-news/whats-coming-to-our-github-actions-2026-security-roadmap/</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">3. https://github.blog/changelog/2026-10-14-github-actions-workflow-lockfiles-in-public-preview/</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">4. https://www.oasis-open.org/standard/sarif-v2-1-0/</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">5. https://docs.oasis-open.org/sarif/sarif/v2.1.0/os/sarif-v2.1.0-os.pdf</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">6. https://arxiv.org/pdf/2601.14455v1</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">7. https://github.com/rhysd/actionlint</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">8. https://github.com/zizmorcore/zizmor</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">9. https://secure-pipelines.com/ci-cd-security/lab-detecting-malicious-github-actions-static-analysis/</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">10. https://www.microsoft.com/en-us/securityengineering/sdl/ghas</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">11. https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-github-security/</p>
+<h2 style="font-size:19px;font-weight:700;color:#1a1a1a;line-height:1.5;margin:2.2em 0 0.9em 0;padding-left:11px;border-left:4px solid #07c160;">二、文中关于自己的数字（可当场核对）</h2>
+<div style="margin:1.4em 0;">
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">文中说法：出处；怎么核对</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">288 页、244 张表、62 个一级标题：《企业级 AI Native 项目开发全流程白皮书》PDF 与 Word 原件；成品 292 页（含 4 页目录），目录页逐条列出 62 个一级标题；表格数可用 Word 字数统计或脚本计数</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">17 条判据：<code style="background:#f2f2f2;padding:1px 4px;border-radius:3px;font-size:14px;font-family:Consolas,monospace;">ci_guard.py</code>（29 KB）与 <code style="background:#f2f2f2;padding:1px 4px;border-radius:3px;font-size:14px;font-family:Consolas,monospace;">docs/RULES.md</code>；每条在 RULES.md 里有独立小节，标注对应的白皮书条款（AV.5 / AV.6 / AW.7 / AW.8 / AW.10 等）</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">三仓合计 55 条 FAIL：各仓 <code style="background:#f2f2f2;padding:1px 4px;border-radius:3px;font-size:14px;font-family:Consolas,monospace;">--format=json</code> 输出（2026-11-15 重跑）；tea 34 + yg-gateway 21 + career-os 0 = 55；另有一个范本仓 0 FAIL、2 WARN</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">四次运行 8s / 9s / 10s / 18s：GitHub Actions run 记录；公开仓 <code style="background:#f2f2f2;padding:1px 4px;border-radius:3px;font-size:14px;font-family:Consolas,monospace;">qiuqianyi66/ci-guard-live</code> 的 Actions 页面，按时间顺序可查四次</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">第一版 4 条全是误报：校准记录与改动前后两次输出；同一范本仓改判定前后各跑一次，对比命中项</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">36 → 35：基线文件前后 diff；改一行 <code style="background:#f2f2f2;padding:1px 4px;border-radius:3px;font-size:14px;font-family:Consolas,monospace;">cancel-in-progress</code> 后重跑，基线忽略数少一条</p>
+<p style="margin:0 0 0.6em 0;padding-left:0;list-style-position:outside;">SARIF 通过官方 schema：<code style="background:#f2f2f2;padding:1px 4px;border-radius:3px;font-size:14px;font-family:Consolas,monospace;">verify_sarif.py</code> + 官方 2.1.0 schema（110 KB）；本地跑校验器，19 条 results 全部合 schema</p>
+</div>
+<h2 style="font-size:19px;font-weight:700;color:#1a1a1a;line-height:1.5;margin:2.2em 0 0.9em 0;padding-left:11px;border-left:4px solid #07c160;">三、你自己怎么复现</h2>
+<pre style="background:#f6f8fa;border:1px solid #eaecef;border-radius:4px;padding:14px 16px;margin:1.4em 0;font-size:13px;line-height:1.6;color:#24292e;white-space:pre-wrap;word-break:break-all;font-family:Consolas,Menlo,monospace;"># 1. 拿到工具
+git clone https://github.com/qiuqianyi66/ci-guard-live
+
+# 2. 跑一次，看它到底报什么
+cd ci-guard-live
+python tools/ci-guard/ci_guard.py .
+
+# 3. 只看结构化结果
+python tools/ci-guard/ci_guard.py . --format=json
+
+# 4. 跑自带回归测试（7 项）
+python tools/ci-guard/selftest.py</pre>
+<p style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;margin:0 0 1.4em 0;text-align:justify;">跑出来的数字如果和本文说的不一致，以你跑出来的为准。<strong>这篇文章里的所有数字都是 2026 年 11 月 15 日的快照，不是永恒真理。</strong></p>
+<p style="background:#fffbe6;border:1px dashed #e8d28a;border-radius:4px;padding:12px 14px;margin:0 0 1.6em 0;font-size:14px;color:#8a6d3b;">【此处插入演示动图：readme-demo.gif】</p>
+<p style="font-size:14px;color:#999;margin-top:2em;">全文与源码：https://github.com/qiuqianyi66/ci-guard-live</p>
+</div></body></html>

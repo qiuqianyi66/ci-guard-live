@@ -193,6 +193,19 @@ tag 是可变的。上游把 `v4` 指向另一份代码，你的流水线第二�
 
 ---
 
+## 分享素材
+
+转载或转发时直接取用，MIT，注明出处即可：
+
+| 文件 | 用途 |
+|---|---|
+| [article-wechat.html](share/article-wechat.html) | 公众号排版版：全内联样式，浏览器打开全选复制，粘进微信编辑器不丢格式 |
+| [cover-288-pages.png](share/cover-288-pages.png) | 1280×720 头图，钩子版 |
+| [cover-ci-gate.png](share/cover-ci-gate.png) | 1280×720 头图，工具版 |
+| [readme-demo.gif](tools/ci-guard/assets/readme-demo.gif) | 12 秒真实运行演示 |
+
+---
+
 ## 边界
 
 - 只读 `.github/workflows/`，不修改任何业务文件
