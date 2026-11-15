@@ -1,9 +1,14 @@
-name: ci-guard
+name: ci-guard reusable
 
-# 把白皮书 AV–AW 的 CI 判据跑成门禁。可复用：调用方只需三行。
-# 判据出处见 ci_guard.py 的 RULES 表与 README。
-# 只判可机械判定的子集；不联网、不执行仓内代码。
-# 自身也过 R01：三个 action 全部 pin 到 commit SHA（SHA 于 2026-11-14 用 git ls-remote 取）。
+# 可被其他仓库直接引用的门禁。调用方三行即可：
+#
+#   jobs:
+#     guard:
+#       uses: qiuqianyi66/ci-guard-live/.github/workflows/reusable-guard.yml@main
+#
+# 本 workflow 会自行检出 ci-guard 源码到 .ci-guard-src，不需要调用方复制任何文件。
+# 只判可机械判定的子集；不联网、不执行被检仓的代码。
+# 自身三个 action 全部 pin 到 commit SHA（SHA 于 2026-11-14 用 git ls-remote 取）。
 
 on:
   workflow_call:
@@ -13,11 +18,6 @@ on:
         type: string
         required: false
         default: "."
-      guard-path:
-        description: ci_guard.py 所在目录
-        type: string
-        required: false
-        default: "tools/ci-guard"
       strict:
         description: true 时 WARN 也算失败
         type: boolean
@@ -28,6 +28,11 @@ on:
         type: string
         required: false
         default: ".ci-guard-baseline.json"
+      source-ref:
+        description: 取哪一版 ci-guard；建议用 tag 而不是 main，避免结论随上游漂移
+        type: string
+        required: false
+        default: "v0.3.3"
 
 permissions:
   contents: read
@@ -37,8 +42,18 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - name: Checkout repository
+      - name: Checkout caller repository
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      # 关键一步：源码取自 ci-guard 本体，而不是调用方仓。
+      # 用 uses: 引用时，调用方仓里并没有 ci_guard.py。
+      - name: Checkout ci-guard source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          repository: qiuqianyi66/ci-guard-live
+          ref: ${{ inputs.source-ref }}
+          path: .ci-guard-src
+          persist-credentials: false
 
       - name: Setup Python
         uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
@@ -56,13 +71,13 @@ jobs:
           if [ "${{ inputs.strict }}" = "true" ]; then STRICT_FLAG="--strict"; fi
           BASE_FLAG=""
           if [ -f "${{ inputs.baseline }}" ]; then BASE_FLAG="--baseline ${{ inputs.baseline }}"; fi
-          python "${{ inputs.guard-path }}/ci_guard.py" "${{ inputs.repo-path }}" $STRICT_FLAG $BASE_FLAG
+          python .ci-guard-src/tools/ci-guard/ci_guard.py "${{ inputs.repo-path }}" $STRICT_FLAG $BASE_FLAG
 
       - name: Emit SARIF
         if: always()
         run: |
           set -euo pipefail
-          python "${{ inputs.guard-path }}/ci_guard.py" "${{ inputs.repo-path }}" \
+          python .ci-guard-src/tools/ci-guard/ci_guard.py "${{ inputs.repo-path }}" \
             --sarif ci-guard.sarif --json > /dev/null || true
 
       - name: Upload SARIF

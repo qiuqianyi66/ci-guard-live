@@ -1,0 +1,21 @@
+name: reusable-selftest
+
+# 这个 workflow 只有一个作用：调用本仓的可复用门禁，
+# 用来证明 README 里「别人用 uses: 引用」那条接入方式真的能跑，而不是写在文档里没验证过。
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  call:
+    # 本地引用：验证 workflow_call 这条通路本身。跨仓引用请把 ./ 换成
+    # qiuqianyi66/ci-guard-live/.github/workflows/reusable-guard.yml@<commit SHA>
+    # 用 @main 或 @vX 会被本仓 R01 判为未钉扎——那是它该报的。
+    uses: ./.github/workflows/reusable-guard.yml
+    with:
+      baseline: .ci-guard-baseline.json
